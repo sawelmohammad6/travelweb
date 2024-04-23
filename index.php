@@ -23,7 +23,7 @@
           <li class="h"><a href="">About</a></li>
           <li class="h"><a href="">Learn</a></li>
           <li class="h"><a href="">Menu</a></li>
-          <li class="h"><a href="#login-form">Log in</a></li>
+          <button class="login-btn">Login</button>
           <li class="hh"><i class="fa-solid fa-bars"></i></li>
           <div class="dropdown">
   <button class="dropbtn">Profile</button>
