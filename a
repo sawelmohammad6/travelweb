@@ -1,0 +1,13 @@
+<?php
+    require_once ('API/connect.php');
+    $query = "SELECT * FROM status";
+    $result = mysqli_query($con, $query);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $status = $row['status'];
+    if ($status == "YES") {
+        $name = $row["username"];
+        $email = $row["email"];
+        $user_type = $row["type"];
+
+        echo '<script> window.location.href = "userdashboard.php"; </script>';
+    }
