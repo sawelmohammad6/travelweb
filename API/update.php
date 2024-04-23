@@ -1,27 +1,30 @@
 <?php
 require_once('connect.php');
-if(isset($_GET['email'])){
-    $mail = $_GET['email'];
-}
+
+
+
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    $fullName = $_POST['full_name'];
+    $fullName = $_POST['name'];
     $email	= $_POST['email'];
     $password = $_POST['password'];
     $phone	= $_POST['phone'];
     
     $sql = "UPDATE registration
-            SET name = '$fullname', email = '$email', password = '$password',phone = '$phone',
-            WHERE email='$mail';"; 
-    $result = mysqli_query($conn,$sql);
+            SET name = '$fullName', email = '$email', password = '$password', phone = '$phone'
+            WHERE email='$email'"; // Removed the extra comma before WHERE
+    $result = mysqli_query($con,$sql);
 
     if ($result)
-    {
-        echo 'New Details Entry Inserted Successfully !';
+        echo '
+        <script>
+            alert("Details Updated Successfully!");
+            window.location.href = "/TRAVELWEB/index.php";
+        </script>
+        ';
     }
     else{
-        echo 'Error: ' . $sql . '' . mysqli_error($conn);
+        echo 'Error: ' . $sql . ' ' . mysqli_error($con);
     }
-    mysqli_close($conn);
-}
+    mysqli_close($con);
 ?>

@@ -6,16 +6,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $password = $_POST['password'];
     
     $sql = "SELECT * FROM registration WHERE email= '$email'"; 
-    $result = mysqli_query($conn,$sql);
+    $result = mysqli_query($con,$sql);
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
 
     if($count==1){
-        $user_type = $row['type'];
         $username=$row['name'];
         $sql="DELETE FROM status;";
         $result = mysqli_query($con ,$sql);
-        $sql = "INSERT INTO status VALUES ('$username','$email','$user_type','YES')";
+        $sql = "INSERT INTO status VALUES ('$username','$email','YES')";
         $result = mysqli_query($con ,$sql);
         echo '
         <script>
