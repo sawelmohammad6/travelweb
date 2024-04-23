@@ -1,14 +1,19 @@
 <?php
 require_once('connect.php');
-if(isset($_GET['email'])){
-    $email=$_GET['email'];
 
-    $sql="DELETE FROM registration WHERE email='$email'";
-    $result = mysqli_query($conn,$sql);
+if(isset($_GET['email'])){
+    $email = $_GET['email'];
+
+    // Using prepared statement to prevent SQL injection
+    $sql = "DELETE FROM registration WHERE email=?";
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    $result = mysqli_stmt_execute($stmt);
+
     if($result){
         echo '
         <script>
-            alert("Delete Sucessfull");
+            alert("Delete Successful");
             window.location.href = "/TRAVELWEB/index.php";
         </script>
         ';
@@ -16,7 +21,7 @@ if(isset($_GET['email'])){
     else{
         echo '
         <script>
-            alert("Error accur");
+            alert("Error occurred");
             window.location.href = "/TRAVELWEB/index.php";
         </script>
         ';

@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <div class="signin-signup">
-            <form action="config/loginconfiq.php" method="POST" class="sign-in-form">
+            <form action="API/login.php" method="POST" class="sign-in-form">
                 <h2 class="title">Sign in</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
@@ -28,7 +28,7 @@
                 <input type="submit" value="Login" class="btn">
                 <p>Don't have an account? <a href="#" class="account-text" id="sign-up-link">Sign up</a></p>
             </form>
-            <form action="config\signup.php" method="POST" class="sign-up-form">
+            <form action="API/signup.php" method="POST" class="sign-up-form">
                 <h2 class="title">Sign up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>

@@ -1,3 +1,37 @@
+<?php
+require_once ('API/connect.php');
+
+$query = "SELECT * FROM status"; // Use the correct column name
+
+$result = mysqli_query($con, $query);
+
+if (!$result) {
+    die("Query failed: " . mysqli_error($con));
+}
+$count =mysqli_num_rows($result) ;
+
+if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    if (isset($row['state'])) {
+        $status = $row['state'];
+        $name = $row['name'];
+
+    } else {
+        // Handle case where 'status_column' key is not found
+        $status = "NO";
+    }
+} else {
+    // Handle case where no rows are returned or more than one row is returned
+    $status = "NO";
+}
+
+
+mysqli_free_result($result);
+mysqli_close($con);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,16 +57,24 @@
           <li class="h"><a href="">About</a></li>
           <li class="h"><a href="">Learn</a></li>
           <li class="h"><a href="">Menu</a></li>
-          <button class="login-btn">Login</button>
-          <li class="hh"><i class="fa-solid fa-bars"></i></li>
-          <div class="dropdown">
+          <?php
+if($status == "YES"){
+    echo '<div class="dropdown">
             <button onclick="myFunction()" class="dropbtn">Profile</button>
             <div id="myDropdown" class="dropdown-content">
-              <a href="#">Name</a>
-              <a href="#">Edit</a>
-              <a href="#">LogOut</a>
+              <a href="#">'.$row['name'].'</a>
+              <a href="Update-info.php?email='.$row['email'].'">Edit</a>
+              <a href="API/logout.php">LogOut</a>
             </div>
-          </div>
+          </div>';
+}
+else{
+    echo '<a class="login-btn" href="login.php">Login</a>';
+}
+?>
+
+
+          
         </ul>
       </nav>
       <!-- header main start -->
