@@ -114,34 +114,7 @@ else{
     <!-- header end -->
     <main>
  <!--Registration and Login Form-->
- <div class="container">
-  <div class="forms-container">
-      <!-- Registration Form -->
-      <div class="form form-registration">
-        <h2>Register</h2>
-        <form id="register-form" action="travellovers.php" method="POST">
-            <input type="text" name="full_name" placeholder="Full Name" required>
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="text" name="phone" placeholder="Phone Number" required>
-            <button type="submit" value="submit">Register</button>
-        </form>
-    </div>
-<br>
-<br>
 
-      <!-- Login Form -->
-      <div class="form form-login">
-          <h2>Login</h2>
-          <form id="login-form">
-              <input type="email" name="email" placeholder="Email" required>
-              <input type="password" name="password" placeholder="Password" required>
-              <button type="submit">Login</button>
-          </form>
-      </div>
-  </div>
-</div>
 
 
 
