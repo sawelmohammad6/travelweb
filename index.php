@@ -26,13 +26,13 @@
           <li class="h"><a href="#login-form">Log in</a></li>
           <li class="hh"><i class="fa-solid fa-bars"></i></li>
           <div class="dropdown">
-  <button class="dropbtn">Profile</button>
-  <div class="dropdown-content">
-    <a href="#">Name</a>
-    <a href="#">Edit</a>
-    <a href="#">Log out</a>
-  </div>
-</div>
+            <button onclick="myFunction()" class="dropbtn">Profile</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">Name</a>
+              <a href="#">Edit</a>
+              <a href="#">LogOut</a>
+            </div>
+          </div>
         </ul>
       </nav>
       <!-- header main start -->
@@ -415,5 +415,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="drop.js"></script>
   </body>
 </html>
