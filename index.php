@@ -25,6 +25,14 @@
           <li class="h"><a href="">Menu</a></li>
           <li class="h"><a href="#login-form">Log in</a></li>
           <li class="hh"><i class="fa-solid fa-bars"></i></li>
+          <div class="dropdown">
+  <button class="dropbtn">Profile</button>
+  <div class="dropdown-content">
+    <a href="#">Name</a>
+    <a href="#">Edit</a>
+    <a href="#">Log out</a>
+  </div>
+</div>
         </ul>
       </nav>
       <!-- header main start -->
