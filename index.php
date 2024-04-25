@@ -63,7 +63,8 @@ if($status == "YES"){
             <button onclick="myFunction()" class="dropbtn">Profile</button>
             <div id="myDropdown" class="dropdown-content">
               <a href="#">'.$row['name'].'</a>
-              <a href="Update-info.php?email='.$row['email'].'">Edit</a>
+              <a href="Update-info.php?email='.$row['email'].'">Update</a>
+              <a href="API/delete.php?email='.$row['email'].'">Delete Account</a>
               <a href="API/logout.php">LogOut</a>
             </div>
           </div>';
@@ -87,8 +88,9 @@ else{
           </p>
         </div>
         <!-- form -->
+        <div class="flexm">
         <form action="" class="fom">
-          <input type="text" placeholder="Where Go" />
+          <input id="uu" type="text" placeholder="Where to Go" />
 
           <select name="" id="">
             <option value="">Time</option>
@@ -109,6 +111,7 @@ else{
             <span style="margin-left: 5px">Search</span>
           </button>
         </form>
+        </div>
       </div>
     </header>
     <!-- header end -->

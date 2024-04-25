@@ -7,8 +7,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $username= $_POST['Username'];
     $email= $_POST['email'];
     $password= $_POST['password'];
-    $password= $_POST['phone'];
-    $user_type="customer";
+    $phone= $_POST['phone'];
       
     if($con){
         $query = "SELECT * FROM registration WHERE email = '$email'";
@@ -17,7 +16,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         $count = mysqli_num_rows($result);
 
         if($count==0){
-            $sql="insert into registration values ('$username','$email','$phone','$password','$type')";
+            $sql="insert into registration values ('$username','$email','$phone','$password')";
             $result=mysqli_query($con,$sql);
         
             if($result){

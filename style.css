@@ -144,10 +144,10 @@ nav a {
 select,
 button {
   width: 160px;
-  height: 44px;
   border-radius: 10px;
   border: none;
-  padding: 10px;
+  
+  
 }
 .fom button {
   color: #fff;
